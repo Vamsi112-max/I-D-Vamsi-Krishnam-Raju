@@ -103,7 +103,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   font-size: 12px;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -148,7 +148,7 @@ nav a:hover {
   box-shadow: 0 4px 14px rgba(14, 138, 79, 0.3);
 }
 
-/* Hero Section (Symmetrical 50/50 split matching grid columns) */
+/* Hero Section */
 .hero {
   position: relative;
   background: linear-gradient(to right, #ffffff 50%, var(--panel) 50%);
@@ -169,7 +169,6 @@ nav a:hover {
   align-items: center;
 }
 
-/* Right Column & Floating Profile Card */
 .hero-card-col {
   display: flex;
   justify-content: center;
@@ -195,7 +194,7 @@ nav a:hover {
   box-shadow: 0 32px 64px -16px rgba(16, 32, 22, 0.22);
 }
 
-/* Circular Avatar with Hover Magnification */
+/* Photo Avatar with smooth magnification */
 .av {
   width: 140px;
   height: 140px;
@@ -222,7 +221,7 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: 50% 15%;
   display: block;
   border-radius: 50%;
   transition: transform .4s ease;
@@ -282,7 +281,7 @@ nav a:hover {
   background: var(--card);
 }
 
-/* Hero Typography (Left Column) */
+/* Hero Typography */
 .tx {
   width: 100%;
 }
@@ -527,6 +526,98 @@ h1 em {
   line-height: 1.6;
 }
 
+/* Certifications Section */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cert-card {
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ac);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s, box-shadow .3s;
+  cursor: pointer;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -16px rgba(14, 138, 79, 0.22);
+}
+
+.cert-preview-wrap {
+  width: 100%;
+  height: 220px;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.cert-preview-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform .4s ease;
+}
+
+.cert-card:hover .cert-preview-wrap img {
+  transform: scale(1.05);
+}
+
+.cert-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--ac);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cert-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.cert-content h3 {
+  font: 700 20px var(--disp);
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.cert-content p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.cert-action {
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ac);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 /* Communities */
 .org {
   display: grid;
@@ -677,7 +768,7 @@ dialog {
 }
 
 dialog.dialog-wide {
-  max-width: 820px;
+  max-width: 860px;
 }
 
 dialog::backdrop {
@@ -771,6 +862,7 @@ dialog::backdrop {
   place-items: center;
   transition: transform .2s, background .2s;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
 .x:hover {
@@ -778,19 +870,20 @@ dialog::backdrop {
   background: var(--card);
 }
 
-/* Lightbox Photo View */
-#photo-dialog .photo-box {
-  padding: 20px;
+/* Lightbox Modal Box */
+.lightbox-box {
+  padding: 24px;
   text-align: center;
   background: #ffffff;
 }
 
-#photo-dialog img {
+.lightbox-box img {
   max-width: 100%;
-  max-height: 70vh;
-  border-radius: 12px;
+  max-height: 72vh;
+  border-radius: 8px;
   object-fit: contain;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  border: 1px solid var(--line);
 }
 
 /* Animations */
@@ -823,7 +916,7 @@ dialog::backdrop {
     max-width: 340px;
     transform: none;
   }
-  .pg, .sk, .org, .two {
+  .pg, .sk, .cert-grid, .org, .two {
     grid-template-columns: 1fr;
   }
 }
@@ -843,10 +936,11 @@ dialog::backdrop {
         <a href="#top">About</a>
         <a href="#exp">Experience</a>
         <a href="#work">Projects</a>
-        <a href="#orgs">Communities</a>
+        <a href="#stack">Toolbox</a>
+        <a href="#certs">Certifications</a>
+        <a href="#orgs">Leadership</a>
         <a href="#contact">Contact</a>
       </nav>
-      <!-- Resume CTA Button -->
       <button class="resume-btn" id="open-resume-btn" title="View or Download Resume">
         <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -871,23 +965,23 @@ dialog::backdrop {
         <a class="pill" href="#contact">Hire me</a>
       </div>
       <p class="b">
-        B.Tech Computer Science student (CGPA 8.46/10) with hands-on experience in Generative AI, Agentic AI, full-stack development, OCR, REST APIs, databases and data analytics. Completed a 5-month AI Developer internship building LLM-powered and OCR-based automation applications, and built and deployed OmniRoot, an agentic AIOps platform. Fast learner seeking to contribute to a software development team.
+        B.Tech Computer Science student (CGPA 8.46/10) who loves to create and innovate new things instead of following the basic, traditional way. Built a GenAI-powered task management and expense analytics platform with OCR dashboards and completed a 5-month Agentic AI Developer internship, reducing manual effort by over 75%. Active leader at Yantriksha X Hub as Chief of Industry, Alumni & Partnership and Registration. Fast learner skilled in Python, REST APIs and full-stack development, with the goal of becoming an entrepreneur.
       </p>
     </div>
 
     <!-- Profile Card (Right Column) -->
     <div class="hero-card-col">
       <aside class="pc">
-        <!-- Enlarging Photo Avatar on Hover / Click -->
+        <!-- Photo Avatar with Hover Magnification and Direct Path -->
         <div class="av" id="profile-avatar" title="Click to view full photo">
-          <img src="/vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" class="av-img" />
+          <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" class="av-img" onerror="this.src='./vamsi-photo.jpg'" />
         </div>
         <h2>Inampudi Durga<br>Vamsi Krishnam Raju</h2>
         <hr>
         <p>Agentic AI Developer</p>
         <div class="soc">
           <a href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/inampudi-vamsi" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/inampudi-durga-vamsi-krishnam-raju-b76b322b7/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:vamsiinampudi01@gmail.com">Email</a>
         </div>
       </aside>
@@ -895,12 +989,12 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION (Direct from Resume & LinkedIn) -->
+<!-- EXPERIENCE SECTION (Direct from Updated Resume) -->
 <section class="sec rv" id="exp">
   <h2 class="t">Experience<i>.</i></h2>
   <div class="tl">
     <h3>Agentic AI Developer Intern · MATIC</h3>
-    <div class="m">Modern Agriculture Technology Innovation Center (MATIC) · MADeIT-Incubated Startup at IIITDM Kancheepuram · Chennai · June 06 2025 – Sep 30 2025 · Full-Time, Hybrid</div>
+    <div class="m">Modern Agriculture Technology Innovation Center (MATIC) · MADeIT-Incubated Startup at IIITDM Kancheepuram · Chennai · Jun'25 – Sep'25 · Full-Time, Hybrid</div>
     <ul>
       <li>Identified <b>fragmented, manual workflows</b> across startup operations by working directly with founders to uncover root causes, then prioritized the highest-impact automation opportunities.</li>
       <li>Translated ambiguous operational problems into <b>structured product requirements</b>, and designed agentic AI workflows using <b>LLMs, LangGraph, LangChain</b> and full-stack technologies.</li>
@@ -914,15 +1008,14 @@ dialog::backdrop {
   <h2 class="t rv">Projects<i>.</i></h2>
   <div class="pg">
     
-    <!-- 1. GenAI-Powered Task Management and Expense Analytics Platform -->
+    <!-- 1. GenAI Task Management & Expense Analytics Platform -->
     <article class="pj rv">
       <span class="n">PROJECT · 01</span>
       <h3>GenAI Task Management & Expense Analytics</h3>
       <div class="st">Python · LLM · Prompt Engineering · REST API · SQL · OCR · HTML</div>
       <ul>
-        <li>Built AI-powered applications for employee task assignment, workflow automation, project tracking, approvals, role-based access control (RBAC) and real-time monitoring.</li>
-        <li>Developed a conversational AI assistant to process natural-language requests, manage employee and project data, automate workflows and generate reports.</li>
-        <li>Built an OCR-based invoice-processing system to extract invoice data, categorize transactions and generate dashboards for income, expenses, profit/loss, vendor analytics and spending trends.</li>
+        <li>Built AI-powered apps for task assignment, workflow automation, approvals, role-based access control and real-time monitoring.</li>
+        <li>Developed a conversational AI assistant and an OCR invoice-processing system generating income, expense, profit/loss and vendor analytics dashboards.</li>
       </ul>
       <div class="lk">
         <a class="pill f" href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
@@ -933,10 +1026,10 @@ dialog::backdrop {
     <article class="pj rv">
       <span class="n">PROJECT · 02</span>
       <h3>IoT Smart Agriculture System</h3>
-      <div class="st">Python · Raspberry Pi · REST API · Cloud</div>
+      <div class="st">Python · REST API · Cloud</div>
       <ul>
-        <li>Developed an IoT platform monitoring soil moisture, temperature, humidity, rainfall, water level, NPK nutrients and light intensity.</li>
-        <li>Integrated Raspberry Pi with sensors, cloud dashboards, automated irrigation control, real-time alerts and remote monitoring for data-driven crop management and efficient water usage.</li>
+        <li>Raspberry Pi platform monitoring soil moisture, temperature, humidity, rainfall, water level, NPK nutrients and light intensity.</li>
+        <li>Live cloud dashboards, automated irrigation control and real-time alerts for efficient water usage.</li>
       </ul>
       <div class="lk">
         <a class="pill f" href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
@@ -949,8 +1042,8 @@ dialog::backdrop {
       <h3>OmniRoot Agentic AI</h3>
       <div class="st">Autonomous Infrastructure Intelligence Platform · OpenAI API · n8n · SQL · Docker</div>
       <ul>
-        <li>Developed an AI-assisted AIOps platform for infrastructure monitoring, incident detection, root-cause analysis, API debugging, cloud cost analysis, security monitoring and remediation support.</li>
-        <li>Designed an architecture with <b>5 specialized AI agents</b>, <b>8 intelligence layers</b> and an <b>18-node workflow</b> for incident analysis, alert prioritization, governance reporting and remediation.</li>
+        <li>AI-assisted AIOps platform for incident detection, root-cause analysis, API debugging, cloud cost and security monitoring.</li>
+        <li>Designed an architecture with <b>5 specialized AI agents</b>, <b>8 intelligence layers</b> and an <b>18-node workflow</b> for alert prioritization and remediation.</li>
       </ul>
       <div class="lk">
         <a class="pill f" href="https://omniroot-agentic-ai.vercel.app" target="_blank" rel="noopener">Live Demo</a>
@@ -964,7 +1057,7 @@ dialog::backdrop {
       <h3>AtomSphere Nexus</h3>
       <div class="st">Goal Intelligence & Performance Tracking SaaS Platform</div>
       <ul>
-        <li>SaaS platform for setting goals and tracking performance with measurable progress for teams and individuals.</li>
+        <li>Goal Intelligence & Performance Tracking SaaS platform for teams and individuals.</li>
       </ul>
       <div class="lk">
         <a class="pill f" href="https://atom-sphere-nexus.vercel.app" target="_blank" rel="noopener">Live Demo</a>
@@ -981,7 +1074,7 @@ dialog::backdrop {
   <div class="sk">
     <div class="rv">
       <b>Programming</b>
-      <span>Python, Java, C, SQL</span>
+      <span>Python, SQL, Java (Basic), C (Basic)</span>
     </div>
     <div class="rv">
       <b>Web Development</b>
@@ -993,7 +1086,7 @@ dialog::backdrop {
     </div>
     <div class="rv" style="grid-column: span 2">
       <b>AI & Automation</b>
-      <span>LLMs, Prompt Engineering, OpenAI API, OCR, n8n, LangChain, LangGraph</span>
+      <span>LLMs, Prompt Engineering, OpenAI API, OCR, n8n</span>
     </div>
     <div class="rv">
       <b>Tools & Platforms</b>
@@ -1002,7 +1095,49 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- COMMUNITIES SECTION (Detailed roles & duties from Resume & LinkedIn) -->
+<!-- CERTIFICATIONS SECTION -->
+<section class="sec" id="certs">
+  <h2 class="t rv">Certifications<i>.</i></h2>
+  <div class="cert-grid">
+    
+    <!-- Certificate 1: PostgreSQL Simplilearn -->
+    <div class="cert-card rv" data-cert="cert-dialog-1">
+      <div class="cert-preview-wrap">
+        <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.src='./cert-postgresql.png'" />
+        <span class="cert-badge">VERIFIED CREDENTIAL</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>PostgreSQL : Become an SQL developer</h3>
+          <p>Simplilearn SkillUp · Certificate Code: <strong>10420246</strong> · Issued 2nd July 2026</p>
+        </div>
+        <div class="cert-action">
+          <span>View Full Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 2: Aurigo Hackathon Pragyan NIT Trichy -->
+    <div class="cert-card rv" data-cert="cert-dialog-2">
+      <div class="cert-preview-wrap">
+        <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Pragyan NIT Trichy Certificate" onerror="this.src='./cert-aurigo-hackathon.png'" />
+        <span class="cert-badge">HACKATHON HONORS</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Pragyan'25 Aurigo Hack-A-Thon</h3>
+          <p>National Level Hackathon by Pragyan'25, NIT-Trichy in association with Aurigo Software Technologies.</p>
+        </div>
+        <div class="cert-action">
+          <span>View Full Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMMUNITIES SECTION -->
 <section class="sec" id="orgs">
   <h2 class="t rv">Communities & Leadership<i>.</i></h2>
   <div class="org">
@@ -1010,7 +1145,7 @@ dialog::backdrop {
     <!-- Yantriksha X Hub -->
     <div class="org-card rv" data-d="d1">
       <h3>Yantriksha X Hub</h3>
-      <p>Chief of Industry, Alumni & Partnership and Registration · Vel Tech University (1000+ students)</p>
+      <p>Chief of Industry, Alumni & Partnership and Registration · Vel Tech University (800+ students)</p>
       <small>View Role Details &rarr;</small>
     </div>
 
@@ -1049,15 +1184,15 @@ dialog::backdrop {
       <h2 class="t">Education<i>.</i></h2>
       <div>
         <b>B.Tech – Computer Science and Engineering · CGPA: 8.46/10</b>
-        <span>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai · Aug 2023 – Jun 2027</span>
+        <span>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai · 2023 – 2027</span>
       </div>
       <div>
         <b>Intermediate (MPC) · 77.4%</b>
-        <span>FIITJEE Junior College, Visakhapatnam · Jun 2021 – Mar 2023</span>
+        <span>FIITJEE Junior College, Visakhapatnam · 2021 – 2023</span>
       </div>
       <div>
         <b>High School · 100%</b>
-        <span>Tirumala E.M. High School · Aug 2020 – Apr 2021</span>
+        <span>Tirumala E.M. High School · 2020 – 2021</span>
       </div>
     </div>
 
@@ -1085,22 +1220,22 @@ dialog::backdrop {
   <button class="x" aria-label="Close">✕</button>
   <div class="dh">
     <h3>Curriculum Vitae</h3>
-    <p>Inampudi Durga Vamsi Krishnam Raju — Agentic AI & Full-Stack Developer</p>
+    <p>Inampudi Durga Vamsi Krishnam Raju — Generative AI | Agentic AI | Full-Stack Development</p>
   </div>
   <div class="db">
     <div style="width:100%;height:58vh;background:#f5f5f5;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px;">
-      <iframe src="/vamsi-resume.pdf#toolbar=1" width="100%" height="100%" style="border:none;">
-        <p>Your browser doesn't support PDF preview. You can <a href="/vamsi-resume.pdf" target="_blank">view the PDF directly</a>.</p>
+      <iframe src="vamsi-resume.pdf#toolbar=1" width="100%" height="100%" style="border:none;">
+        <p>Your browser doesn't support PDF preview. You can <a href="vamsi-resume.pdf" target="_blank">view the PDF directly</a>.</p>
       </iframe>
     </div>
     <div class="row" style="margin-top:0;">
-      <a class="pill f" href="/vamsi-resume.pdf" download="Vamsi_Krishnam_Raju_Resume.pdf">
+      <a class="pill f" href="vamsi-resume.pdf" download="Vamsi_Krishnam_Raju_Resume.pdf">
         <svg style="width:14px;height:14px;margin-right:4px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
         Download Resume (PDF)
       </a>
-      <a class="pill" href="/vamsi-resume.pdf" target="_blank" rel="noopener">
+      <a class="pill" href="vamsi-resume.pdf" target="_blank" rel="noopener">
         Open in New Tab
       </a>
     </div>
@@ -1110,14 +1245,40 @@ dialog::backdrop {
 <!-- PHOTO LIGHTBOX MODAL -->
 <dialog id="photo-dialog">
   <button class="x" aria-label="Close">✕</button>
-  <div class="photo-box">
-    <img src="/vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" />
+  <div class="lightbox-box">
+    <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" onerror="this.src='./vamsi-photo.jpg'" />
     <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Inampudi Durga Vamsi Krishnam Raju</h3>
     <p style="font-size:12px;color:var(--mut);letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-top:4px;">Agentic AI Developer</p>
   </div>
 </dialog>
 
-<!-- YANTRIKSHA X HUB MODAL (Detailed roles & responsibilities) -->
+<!-- CERTIFICATE 1 LIGHTBOX MODAL -->
+<dialog id="cert-dialog-1" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.src='./cert-postgresql.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">PostgreSQL : Become an SQL developer</h3>
+    <p style="font-size:12.5px;color:var(--mut);margin-top:4px;">Simplilearn SkillUp Verified Certificate · Code: 10420246 · Issued 2nd July 2026</p>
+    <div style="margin-top:16px;">
+      <a class="pill f" href="cert-postgresql.png" download="Simplilearn_PostgreSQL_Certificate.png">Download Certificate</a>
+    </div>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 2 LIGHTBOX MODAL -->
+<dialog id="cert-dialog-2" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Certificate" onerror="this.src='./cert-aurigo-hackathon.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Pragyan'25 Aurigo Hack-A-Thon</h3>
+    <p style="font-size:12.5px;color:var(--mut);margin-top:4px;">National Level Hackathon Certificate · NIT-Trichy & Aurigo Software Technologies</p>
+    <div style="margin-top:16px;">
+      <a class="pill f" href="cert-aurigo-hackathon.png" download="Pragyan_Aurigo_Hackathon_Certificate.png">Download Certificate</a>
+    </div>
+  </div>
+</dialog>
+
+<!-- YANTRIKSHA X HUB MODAL -->
 <dialog id="d1">
   <button class="x" aria-label="Close">✕</button>
   <div class="dh">
@@ -1128,7 +1289,7 @@ dialog::backdrop {
   <div class="db">
     <ul>
       <li><b>Role:</b> Chief of Industry, Alumni & Partnership and Registration</li>
-      <li><b>Community Scale:</b> Leading a student developer and tech community of <b>1000+ members</b>.</li>
+      <li><b>Community Scale:</b> Leading a student developer and tech community of <b>800+ members</b>.</li>
       <li><b>Industry Alignment:</b> Established strategic partnerships with industry leaders, tech startups, and technical incubators for student opportunities.</li>
       <li><b>Alumni & Expert Engagement:</b> Organized expert guest lectures, mentorship pipelines, and industry connect sessions.</li>
       <li><b>Event & Hackathon Operations:</b> Spearheaded large-scale hackathon registrations, participant coordination, and event logistics across the university.</li>
@@ -1139,7 +1300,7 @@ dialog::backdrop {
   </div>
 </dialog>
 
-<!-- JUST BETWEEN US TOWN HALL MODAL (Detailed roles & responsibilities) -->
+<!-- JUST BETWEEN US TOWN HALL MODAL -->
 <dialog id="d2">
   <button class="x" aria-label="Close">✕</button>
   <div class="dh">
@@ -1180,6 +1341,16 @@ dialog::backdrop {
       photoDialog.showModal();
     });
   }
+
+  // Certificates Lightbox Triggers
+  document.querySelectorAll('[data-cert]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      var dialogId = this.getAttribute('data-cert');
+      var dialog = document.getElementById(dialogId);
+      if(dialog) dialog.showModal();
+    });
+  });
 
   // Communities Dialog Triggers
   document.querySelectorAll('[data-d]').forEach(function(card){
