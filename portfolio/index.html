@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vamsi Krishnam Raju — Agentic AI & Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Inampudi Durga Vamsi Krishnam Raju — Agentic AI Developer, Full-Stack Engineer, and Tech Community Leader.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
@@ -199,12 +200,9 @@ nav a:hover {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  margin: 32px auto 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: -70px auto 20px;
+  box-shadow: 0 10px 25px -3px rgba(14, 138, 79, 0.35);
   border: 4px solid #ffffff;
-  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
   overflow: hidden;
   background: var(--card);
   position: relative;
@@ -247,146 +245,158 @@ nav a:hover {
 
 .pc p {
   font-size: 11px;
-  letter-spacing: .25em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--mut);
-  padding: 0 14px 26px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .soc {
   display: flex;
   border-top: 1px solid var(--line);
-  background: var(--bg);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+  margin-top: 24px;
 }
 
 .soc a {
   flex: 1;
-  padding: 14px 0;
-  font-size: 12px;
+  padding: 14px 8px;
   text-decoration: none;
+  font-size: 12px;
   font-weight: 600;
   color: var(--ink);
-  transition: color .2s, background .2s;
+  transition: background .2s, color .2s;
 }
 
-.soc a:not(:last-child) {
-  border-right: 1px solid var(--line);
+.soc a + a {
+  border-left: 1px solid var(--line);
 }
 
 .soc a:hover {
-  color: var(--ac);
   background: var(--card);
+  color: var(--ac);
 }
 
-/* Hero Typography */
-.tx {
-  width: 100%;
-}
-
-.kick {
+.tx .kick {
   font-size: 12px;
-  letter-spacing: .2em;
+  letter-spacing: .25em;
   text-transform: uppercase;
   color: var(--ac);
   font-weight: 700;
+  margin-bottom: 12px;
 }
 
-h1 {
-  font: 800 clamp(54px, 8.5vw, 108px)/.95 var(--disp);
-  letter-spacing: -.035em;
-  margin: 10px 0 16px;
+.tx h1 {
+  font: 800 68px/1 var(--disp);
+  margin-bottom: 20px;
   color: var(--ink);
+  letter-spacing: -0.02em;
 }
 
-h1 em {
-  font-style: normal;
+.tx h1 em {
   color: var(--ac);
+  font-style: normal;
 }
 
-.sub {
-  font-size: 20px;
+.tx .sub {
+  font-size: 18px;
+  color: var(--mut);
   margin-bottom: 24px;
-  color: var(--ink);
+  font-weight: 400;
 }
 
-.sub b {
-  font-weight: 700;
+.tx .sub b {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .btns {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 26px;
+  margin-bottom: 32px;
 }
 
 .pill {
-  padding: 10px 24px;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 40px;
+  text-decoration: none;
   font-size: 12px;
-  font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
-  text-decoration: none;
+  font-weight: 700;
   border: 1.5px solid var(--ink);
   transition: transform .2s, background .2s, color .2s, border-color .2s;
   cursor: pointer;
-  background: none;
-  color: var(--ink);
-  font-family: inherit;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .pill.f {
   background: var(--ac);
   border-color: var(--ac);
-  color: var(--fg2);
-}
-
-.pill:hover {
-  transform: translateY(-3px);
+  color: #ffffff;
 }
 
 .pill.f:hover {
   background: #09683a;
   border-color: #09683a;
+  transform: translateY(-2px);
 }
 
-.tx p.b {
+.pill:not(.f):hover {
+  background: var(--ink);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.tx .b {
+  font-size: 14px;
   color: var(--mut);
-  max-width: 500px;
-  font-size: 15px;
   line-height: 1.7;
+  max-width: 520px;
 }
 
 /* Sections */
 .sec {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 80px 24px 20px;
+  padding: 88px 24px;
 }
 
-.sec h2.t {
-  font: 800 clamp(32px, 5vw, 54px)/1 var(--disp);
-  letter-spacing: -.03em;
-  margin-bottom: 34px;
+.sec + .sec {
+  border-top: 1px solid var(--line);
+}
+
+.sec .t {
+  font: 800 36px/1.2 var(--disp);
+  margin-bottom: 36px;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
-.sec h2.t i {
-  font-style: normal;
+.sec .t i {
   color: var(--ac);
+  font-style: normal;
 }
 
 /* Experience */
 .tl {
-  border-left: 3px solid var(--ac);
-  padding: 4px 0 4px 26px;
+  border-left: 2px solid var(--ac);
+  padding-left: 28px;
+  position: relative;
+}
+
+.tl:before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ac);
+  box-shadow: 0 0 0 4px var(--card);
 }
 
 .tl h3 {
@@ -529,7 +539,7 @@ h1 em {
 /* Certifications Section */
 .cert-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
 }
 
@@ -552,7 +562,7 @@ h1 em {
 
 .cert-preview-wrap {
   width: 100%;
-  height: 220px;
+  height: 200px;
   background: #ffffff;
   overflow: hidden;
   position: relative;
@@ -587,7 +597,7 @@ h1 em {
 }
 
 .cert-content {
-  padding: 24px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -595,13 +605,13 @@ h1 em {
 }
 
 .cert-content h3 {
-  font: 700 20px var(--disp);
+  font: 700 19px/1.3 var(--disp);
   color: var(--ink);
   margin-bottom: 6px;
 }
 
 .cert-content p {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--mut);
   line-height: 1.55;
   margin-bottom: 14px;
@@ -658,59 +668,55 @@ h1 em {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: 16px;
+  color: var(--ac);
   font-size: 11px;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: var(--ac);
   font-weight: 700;
+  margin-top: 14px;
 }
 
-/* Wins & Education */
+/* Two Columns (Wins & Education) */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
 .ach {
   list-style: none;
-  display: grid;
-  gap: 12px;
+  padding: 0;
 }
 
 .ach li {
-  background: var(--card);
-  padding: 16px 20px;
-  border-radius: 8px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
   font-size: 14px;
   color: var(--mut);
-  border: 1px solid var(--line);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.ach b {
+.ach li b {
   color: var(--ink);
 }
 
 .ach .md {
-  background: var(--ac);
-  color: var(--fg2);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-right: 10px;
   display: inline-block;
-}
-
-.two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  background: var(--ac);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .ed div {
-  padding: 16px 0;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
-}
-
-.ed div:first-of-type {
-  padding-top: 0;
 }
 
 .ed b {
@@ -720,81 +726,92 @@ h1 em {
 }
 
 .ed span {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--mut);
 }
 
-/* CTA / Contact */
+/* Call to Action */
 .cta {
   background: var(--panel);
-  margin-top: 80px;
-  padding: 80px 24px;
+  border-top: 1px solid var(--line);
+  padding: 88px 24px;
   text-align: center;
 }
 
+.cta .kick {
+  font-size: 12px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--ac);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .cta h2 {
-  font: 800 clamp(36px, 7vw, 76px)/1 var(--disp);
-  letter-spacing: -.04em;
-  margin-bottom: 24px;
+  font: 800 48px/1.1 var(--disp);
+  margin-bottom: 28px;
   color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 .cta .btns {
   justify-content: center;
-  margin: 24px 0 0;
 }
 
 /* Footer */
 footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 24px;
   text-align: center;
-  padding: 24px;
   font-size: 12px;
   color: var(--mut);
-  background: var(--bg);
-  border-top: 1px solid var(--line);
 }
 
-/* Dialog Modals */
+/* Modals & Dialogs */
 dialog {
   border: 0;
   border-radius: 12px;
   padding: 0;
-  max-width: 520px;
-  width: calc(100% - 32px);
+  max-width: 580px;
+  width: 90%;
   background: var(--bg);
+  box-shadow: 0 30px 60px -12px rgba(16, 32, 22, 0.4);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: var(--ink);
-  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.35);
-  margin: auto;
+  overflow: hidden;
 }
 
 dialog.dialog-wide {
   max-width: 860px;
+  width: 94%;
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(16, 32, 22, 0.7);
   backdrop-filter: blur(4px);
 }
 
 .dh {
-  background: var(--panel);
-  padding: 30px 28px 22px;
+  padding: 24px 28px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
   position: relative;
 }
 
-.dh .av-initials {
-  margin: 0 0 14px;
-  width: 76px;
-  height: 76px;
-  font-size: 24px;
-  border-radius: 16px;
-  background: radial-gradient(circle at 30% 30%, #58a679, #0e8a4f 60%, #085a32);
+.av-initials {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--ac);
   color: #ffffff;
   display: grid;
   place-items: center;
-  font-family: var(--disp);
-  font-weight: 800;
-  border: 3px solid #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .dh h3 {
@@ -872,7 +889,7 @@ dialog::backdrop {
 
 /* Lightbox Modal Box */
 .lightbox-box {
-  padding: 24px;
+  padding: 28px;
   text-align: center;
   background: #ffffff;
 }
@@ -941,12 +958,13 @@ dialog::backdrop {
         <a href="#orgs">Leadership</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="resume-btn" id="open-resume-btn" title="View or Download Resume">
-        <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      <!-- Top Bar Resume Button -->
+      <a class="resume-btn" id="open-resume-btn" href="#resume-dialog">
+        <svg style="width:13px;height:13px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        <span>Resume</span>
-      </button>
+        Resume
+      </a>
     </div>
   </div>
 </header>
@@ -972,9 +990,9 @@ dialog::backdrop {
     <!-- Profile Card (Right Column) -->
     <div class="hero-card-col">
       <aside class="pc">
-        <!-- Photo Avatar with Hover Magnification and Direct Path -->
+        <!-- Photo Avatar with Hover Magnification and Direct Relative Path -->
         <div class="av" id="profile-avatar" title="Click to view full photo">
-          <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" class="av-img" onerror="this.src='./vamsi-photo.jpg'" />
+          <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" class="av-img" onerror="this.onerror=null;this.src='./vamsi-photo.jpg'" />
         </div>
         <h2>Inampudi Durga<br>Vamsi Krishnam Raju</h2>
         <hr>
@@ -989,7 +1007,7 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION (Direct from Updated Resume) -->
+<!-- EXPERIENCE SECTION -->
 <section class="sec rv" id="exp">
   <h2 class="t">Experience<i>.</i></h2>
   <div class="tl">
@@ -1003,7 +1021,7 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- PROJECTS SECTION (1: GenAI, 2: IoT, 3: OmniRoot, 4: AtomSphere) -->
+<!-- PROJECTS SECTION -->
 <section class="sec" id="work">
   <h2 class="t rv">Projects<i>.</i></h2>
   <div class="pg">
@@ -1095,15 +1113,49 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- CERTIFICATIONS SECTION -->
+<!-- CERTIFICATIONS SECTION (NO DOWNLOAD BUTTONS) -->
 <section class="sec" id="certs">
   <h2 class="t rv">Certifications<i>.</i></h2>
   <div class="cert-grid">
     
-    <!-- Certificate 1: PostgreSQL Simplilearn -->
+    <!-- Certificate 1: IIITDM 3rd Place Cybersecurity Challenge -->
     <div class="cert-card rv" data-cert="cert-dialog-1">
       <div class="cert-preview-wrap">
-        <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.src='./cert-postgresql.png'" />
+        <img src="cert-iiitdm-bootcamp-3rd-place.png" alt="IIITDM Cybersecurity 3rd Place Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp-3rd-place.png'" />
+        <span class="cert-badge">3RD PLACE HONORS</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Software Security Challenge — 3rd Place</h3>
+          <p>IIITD&M Kancheepuram · Secured 3rd Place among 30 participating teams in solving software security challenges · Dec 2024</p>
+        </div>
+        <div class="cert-action">
+          <span>View Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 2: IIITDM Secure Software Development Boot Camp -->
+    <div class="cert-card rv" data-cert="cert-dialog-2">
+      <div class="cert-preview-wrap">
+        <img src="cert-iiitdm-bootcamp.png" alt="IIITDM Secure Software Boot Camp Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp.png'" />
+        <span class="cert-badge">BOOTCAMP HONORS</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Secure Software Development & Testing</h3>
+          <p>IIITD&M Kancheepuram · Department of CSE & HPRCSE Lab · Sponsored by ISEA Phase 3, MeitY</p>
+        </div>
+        <div class="cert-action">
+          <span>View Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 3: PostgreSQL Simplilearn -->
+    <div class="cert-card rv" data-cert="cert-dialog-3">
+      <div class="cert-preview-wrap">
+        <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.onerror=null;this.src='./cert-postgresql.png'" />
         <span class="cert-badge">VERIFIED CREDENTIAL</span>
       </div>
       <div class="cert-content">
@@ -1112,15 +1164,15 @@ dialog::backdrop {
           <p>Simplilearn SkillUp · Certificate Code: <strong>10420246</strong> · Issued 2nd July 2026</p>
         </div>
         <div class="cert-action">
-          <span>View Full Certificate &rarr;</span>
+          <span>View Certificate &rarr;</span>
         </div>
       </div>
     </div>
 
-    <!-- Certificate 2: Aurigo Hackathon Pragyan NIT Trichy -->
-    <div class="cert-card rv" data-cert="cert-dialog-2">
+    <!-- Certificate 4: Aurigo Hackathon Pragyan NIT Trichy -->
+    <div class="cert-card rv" data-cert="cert-dialog-4">
       <div class="cert-preview-wrap">
-        <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Pragyan NIT Trichy Certificate" onerror="this.src='./cert-aurigo-hackathon.png'" />
+        <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Pragyan NIT Trichy Certificate" onerror="this.onerror=null;this.src='./cert-aurigo-hackathon.png'" />
         <span class="cert-badge">HACKATHON HONORS</span>
       </div>
       <div class="cert-content">
@@ -1129,7 +1181,58 @@ dialog::backdrop {
           <p>National Level Hackathon by Pragyan'25, NIT-Trichy in association with Aurigo Software Technologies.</p>
         </div>
         <div class="cert-action">
-          <span>View Full Certificate &rarr;</span>
+          <span>View Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 5: Google Gemini Write-off -->
+    <div class="cert-card rv" data-cert="cert-dialog-5">
+      <div class="cert-preview-wrap">
+        <img src="cert-google-gemini-writeoff.png" alt="Google Gemini Write-off Certificate" onerror="this.onerror=null;this.src='./cert-google-gemini-writeoff.png'" />
+        <span class="cert-badge">GOOGLE AMBASSADOR</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Google Gemini Write-off</h3>
+          <p>Google Student Ambassador Program · Unstop · Innovation & Prompt Engineering (Nov 2025)</p>
+        </div>
+        <div class="cert-action">
+          <span>View Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 6: Customer Centricity Wadhwani & PepsiCo -->
+    <div class="cert-card rv" data-cert="cert-dialog-6">
+      <div class="cert-preview-wrap">
+        <img src="cert-wadhwani-customer-centricity.png" alt="Customer Centricity Certificate" onerror="this.onerror=null;this.src='./cert-wadhwani-customer-centricity.png'" />
+        <span class="cert-badge">PROFESSIONAL SKILLS</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Customer Centricity</h3>
+          <p>Wadhwani Foundation & PepsiCo · 4 hours training in client empathy and business value creation · July 2026</p>
+        </div>
+        <div class="cert-action">
+          <span>View Certificate &rarr;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 7: Interpersonal Skills Wadhwani & PepsiCo -->
+    <div class="cert-card rv" data-cert="cert-dialog-7">
+      <div class="cert-preview-wrap">
+        <img src="cert-wadhwani-interpersonal-skills.png" alt="Interpersonal Skills Certificate" onerror="this.onerror=null;this.src='./cert-wadhwani-interpersonal-skills.png'" />
+        <span class="cert-badge">WORKPLACE SKILLS</span>
+      </div>
+      <div class="cert-content">
+        <div>
+          <h3>Interpersonal Skills</h3>
+          <p>Wadhwani Foundation & PepsiCo · 6 hours training in communication, leadership, and team collaboration · July 2026</p>
+        </div>
+        <div class="cert-action">
+          <span>View Certificate &rarr;</span>
         </div>
       </div>
     </div>
@@ -1246,35 +1349,79 @@ dialog::backdrop {
 <dialog id="photo-dialog">
   <button class="x" aria-label="Close">✕</button>
   <div class="lightbox-box">
-    <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" onerror="this.src='./vamsi-photo.jpg'" />
+    <img src="vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" onerror="this.onerror=null;this.src='./vamsi-photo.jpg'" />
     <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Inampudi Durga Vamsi Krishnam Raju</h3>
     <p style="font-size:12px;color:var(--mut);letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-top:4px;">Agentic AI Developer</p>
   </div>
 </dialog>
 
-<!-- CERTIFICATE 1 LIGHTBOX MODAL -->
+<!-- CERTIFICATE 1 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
 <dialog id="cert-dialog-1" class="dialog-wide">
   <button class="x" aria-label="Close">✕</button>
   <div class="lightbox-box">
-    <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.src='./cert-postgresql.png'" />
-    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">PostgreSQL : Become an SQL developer</h3>
-    <p style="font-size:12.5px;color:var(--mut);margin-top:4px;">Simplilearn SkillUp Verified Certificate · Code: 10420246 · Issued 2nd July 2026</p>
-    <div style="margin-top:16px;">
-      <a class="pill f" href="cert-postgresql.png" download="Simplilearn_PostgreSQL_Certificate.png">Download Certificate</a>
-    </div>
+    <img src="cert-iiitdm-bootcamp-3rd-place.png" alt="IIITDM Cybersecurity 3rd Place Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp-3rd-place.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Software Security Challenge — 3rd Place</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">IIITD&M Kancheepuram · Secured 3rd Place among 30 participating teams · Boot Camp on Secure Software Development & Testing · Dec 2024</p>
   </div>
 </dialog>
 
-<!-- CERTIFICATE 2 LIGHTBOX MODAL -->
+<!-- CERTIFICATE 2 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
 <dialog id="cert-dialog-2" class="dialog-wide">
   <button class="x" aria-label="Close">✕</button>
   <div class="lightbox-box">
-    <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Certificate" onerror="this.src='./cert-aurigo-hackathon.png'" />
+    <img src="cert-iiitdm-bootcamp.png" alt="IIITDM Secure Software Boot Camp Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Secure Software Development & Testing Boot Camp</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">IIITD&M Kancheepuram · Department of Computer Science and Engineering & HPRCSE Lab · Sponsored by ISEA Phase 3, MeitY · Dec 2024</p>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 3 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
+<dialog id="cert-dialog-3" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-postgresql.png" alt="Simplilearn PostgreSQL Certificate" onerror="this.onerror=null;this.src='./cert-postgresql.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">PostgreSQL : Become an SQL developer</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">Simplilearn SkillUp Verified Certificate · Code: 10420246 · Issued 2nd July 2026</p>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 4 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
+<dialog id="cert-dialog-4" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-aurigo-hackathon.png" alt="Aurigo Hackathon Certificate" onerror="this.onerror=null;this.src='./cert-aurigo-hackathon.png'" />
     <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Pragyan'25 Aurigo Hack-A-Thon</h3>
-    <p style="font-size:12.5px;color:var(--mut);margin-top:4px;">National Level Hackathon Certificate · NIT-Trichy & Aurigo Software Technologies</p>
-    <div style="margin-top:16px;">
-      <a class="pill f" href="cert-aurigo-hackathon.png" download="Pragyan_Aurigo_Hackathon_Certificate.png">Download Certificate</a>
-    </div>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">National Level Hackathon Honors · Pragyan'25 NIT-Trichy & Aurigo Software Technologies</p>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 5 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
+<dialog id="cert-dialog-5" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-google-gemini-writeoff.png" alt="Google Gemini Write-off Certificate" onerror="this.onerror=null;this.src='./cert-google-gemini-writeoff.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Google Gemini Write-off</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">Google Student Ambassador Program · Unstop · Fostering learning and GenAI innovation (Nov 2025)</p>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 6 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
+<dialog id="cert-dialog-6" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-wadhwani-customer-centricity.png" alt="Customer Centricity Certificate" onerror="this.onerror=null;this.src='./cert-wadhwani-customer-centricity.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Microcertificate in Customer Centricity</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">Wadhwani Foundation & PepsiCo (Pep Sales Star) · 4 hours of training (July 15, 2026)</p>
+  </div>
+</dialog>
+
+<!-- CERTIFICATE 7 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
+<dialog id="cert-dialog-7" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="lightbox-box">
+    <img src="cert-wadhwani-interpersonal-skills.png" alt="Interpersonal Skills Certificate" onerror="this.onerror=null;this.src='./cert-wadhwani-interpersonal-skills.png'" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Microcertificate in Interpersonal Skills</h3>
+    <p style="font-size:13px;color:var(--mut);margin-top:4px;">Wadhwani Foundation & PepsiCo (Pep Sales Star) · 6 hours of training (July 15, 2026)</p>
   </div>
 </dialog>
 
@@ -1342,7 +1489,7 @@ dialog::backdrop {
     });
   }
 
-  // Certificates Lightbox Triggers
+  // Certificates Lightbox Triggers (Preview only, no download)
   document.querySelectorAll('[data-cert]').forEach(function(card){
     card.addEventListener('click', function(e){
       e.preventDefault();
