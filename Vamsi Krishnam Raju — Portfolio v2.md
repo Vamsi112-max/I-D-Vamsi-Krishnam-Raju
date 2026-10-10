@@ -109,4 +109,4 @@ Let's talk
 
 © 2026 Inampudi Durga Vamsi Krishnam Raju · Chennai
 
-YX Yantriksha X Hub Vel Tech University · Chennai **My role:** Chief of Industry, Alumni & Partnership Community of **800+ students** Focus: connecting students with industry, alumni and partners [Official page](#) JB Just Between Us Team Hall **My role:** Creative Design & Visuals Head Leading the visual identity and creative output of the team [Official page](#)
+YX Yantriksha X Hub Vel Tech University · Chennai **My role:** Chief of Industry, Alumni & Partnership Community of **800+ students** Focus: connecting students with industry, alumni and partners [Official page](#) JB Just Between Us Town Hall **My role:** Creative Design & Visuals Head Leading the visual identity and creative output of the team [Official page](#)

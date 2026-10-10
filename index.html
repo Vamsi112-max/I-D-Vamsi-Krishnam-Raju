@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vamsi Krishnam Raju — Agentic AI & Full-Stack Developer</title>
 <meta name="description" content="Portfolio of Inampudi Durga Vamsi Krishnam Raju — Agentic AI Developer, Full-Stack Engineer, and Tech Community Leader.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
@@ -51,29 +56,28 @@ a {
 header {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
-  z-index: 30;
+  z-index: 40;
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 
 .bar {
-  max-width: 1140px;
+  max-width: min(1280px, 94vw);
   margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
+  padding: 0 clamp(16px, 3vw, 32px);
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .brand {
-  font-weight: 700;
-  font-size: 15px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
   color: var(--ink);
-  white-space: nowrap;
 }
 
 .brand:before {
@@ -82,31 +86,44 @@ header {
   width: 10px;
   height: 10px;
   background: var(--ac);
-  margin-right: 10px;
   border-radius: 2px;
   transform: rotate(45deg);
   flex-shrink: 0;
 }
 
-.brand span {
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: .08em;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.brand-role {
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: .12em;
   color: var(--mut);
-  margin-left: 8px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   font-size: 11.5px;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -153,24 +170,107 @@ nav a:hover {
   box-shadow: 0 4px 14px rgba(14, 138, 79, 0.3);
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  padding: 0;
+  color: var(--ink);
+  transition: background .2s;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 24px 24px;
+  box-shadow: 0 16px 32px rgba(16, 32, 22, 0.12);
+  flex-direction: column;
+  gap: 12px;
+  z-index: 35;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--card);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.mobile-nav a:hover {
+  color: var(--ac);
+}
+
+.mobile-nav .resume-btn {
+  margin-top: 8px;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
 /* 1. HERO / ABOUT SECTION */
 .hero {
   position: relative;
   background: linear-gradient(to right, #ffffff 50%, var(--panel) 50%);
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  padding: clamp(36px, 5vh, 72px) 0;
 }
 
 .hi {
-  max-width: 1140px;
+  max-width: min(1280px, 94vw);
   width: 100%;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 0 clamp(16px, 3vw, 32px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
 }
 
@@ -290,7 +390,7 @@ nav a:hover {
 }
 
 .tx h1 {
-  font: 800 68px/1 var(--disp);
+  font: 800 clamp(42px, 5.2vw, 68px)/1.05 var(--disp);
   margin-bottom: 20px;
   color: var(--ink);
   letter-spacing: -0.02em;
@@ -302,7 +402,7 @@ nav a:hover {
 }
 
 .tx .sub {
-  font-size: 18px;
+  font-size: clamp(16px, 1.4vw, 18px);
   color: var(--mut);
   margin-bottom: 24px;
   font-weight: 400;
@@ -355,17 +455,17 @@ nav a:hover {
 }
 
 .tx .b {
-  font-size: 14px;
+  font-size: clamp(13.5px, 1.1vw, 15px);
   color: var(--mut);
-  line-height: 1.7;
-  max-width: 520px;
+  line-height: 1.75;
+  max-width: 580px;
 }
 
 /* Sections Structure */
 .sec {
-  max-width: 1140px;
+  max-width: min(1280px, 94vw);
   margin: 0 auto;
-  padding: 88px 24px;
+  padding: clamp(60px, 8vh, 96px) clamp(16px, 3vw, 32px);
 }
 
 .sec + .sec {
@@ -373,7 +473,7 @@ nav a:hover {
 }
 
 .sec .t {
-  font: 800 36px/1.2 var(--disp);
+  font: 800 clamp(28px, 3.2vw, 36px)/1.2 var(--disp);
   margin-bottom: 36px;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -983,28 +1083,77 @@ dialog::backdrop {
 }
 
 @media(max-width:920px) {
-  nav { display: none; }
+  nav, .nav-wrap .resume-btn { display: none; }
+  .mobile-menu-toggle { display: flex; }
   .hero {
-    background: linear-gradient(to bottom, var(--panel) 0 380px, #ffffff 380px);
-    align-items: flex-start;
+    background: linear-gradient(180deg, var(--panel) 0%, rgba(220, 235, 221, 0.45) 420px, #ffffff 580px);
+    min-height: auto;
+    padding: 72px 0 52px;
   }
   .hi {
     grid-template-columns: 1fr;
     display: flex;
     flex-direction: column-reverse;
-    gap: 36px;
-    padding-top: 40px;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .hero-card-col {
+    margin-top: 48px;
   }
   .pc {
     width: 100%;
-    max-width: 340px;
+    max-width: 330px;
     transform: none;
+    margin: 0 auto;
+  }
+  .av {
+    width: 120px;
+    height: 120px;
+    margin: -60px auto 16px;
   }
   .pg, .sk, .ed-grid, .wins-wrap, .cert-grid, .org {
     grid-template-columns: 1fr;
   }
-  .wins-participated {
-    grid-column: span 1;
+  .wins-participated, .sk div[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+  .sec {
+    padding: 56px 20px;
+  }
+  .sec .t {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+}
+
+@media(max-width:640px) {
+  .bar {
+    height: 62px;
+  }
+  .mobile-nav {
+    top: 62px;
+  }
+  .brand-name {
+    font-size: 14.5px;
+  }
+  .brand-role {
+    font-size: 9.5px;
+  }
+  .tx h1 {
+    font-size: 40px;
+  }
+  .btns {
+    gap: 8px;
+  }
+  .pill {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+  .cta h2 {
+    font-size: 32px;
+  }
+  dialog {
+    width: 95%;
   }
 }
 </style>
@@ -1015,8 +1164,10 @@ dialog::backdrop {
 <header>
   <div class="bar">
     <a href="#about" class="brand">
-      Vamsi Krishnam Raju
-      <span>/ Agentic AI Developer</span>
+      <div class="brand-text">
+        <span class="brand-name">Vamsi Krishnam Raju</span>
+        <span class="brand-role">Agentic AI Developer</span>
+      </div>
     </a>
     <div class="nav-wrap">
       <nav>
@@ -1037,7 +1188,32 @@ dialog::backdrop {
         </svg>
         Resume
       </a>
+      <!-- Mobile Hamburger Menu Button -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#about">About</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#toolbox">Toolbox</a>
+    <a href="#wins">Wins</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact">Contact</a>
+    <a class="resume-btn" id="mobile-open-resume-btn" href="#resume-dialog">
+      <svg style="width:13px;height:13px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      Resume
+    </a>
   </div>
 </header>
 
@@ -1052,7 +1228,7 @@ dialog::backdrop {
       <div class="btns">
         <a class="pill f" href="#projects">Projects</a>
         <a class="pill" href="#experience">Experience</a>
-        <a class="pill" href="#contact">Hire me</a>
+        <a class="pill" href="#contact">Contact me</a>
       </div>
       <p class="b">
         B.Tech Computer Science student (CGPA 8.46/10) who loves to create and innovate new things instead of following the basic, traditional way. Built a GenAI-powered task management and expense analytics platform with OCR dashboards and completed a 5-month Agentic AI Developer internship, reducing manual effort by over 75%. Active leader at Yantriksha X Hub as Chief of Industry, Alumni & Partnership and Registration. A fast learner who keeps upgrading instead of settling in one place, skilled in Python, REST APIs and full-stack development, with the goal of becoming an entrepreneur.
@@ -1094,7 +1270,7 @@ dialog::backdrop {
     <!-- Just Between Us -->
     <div class="org-card rv" data-d="d2">
       <h3>Just Between Us Town Hall</h3>
-      <p>Creative Design & Visuals Head · Team Hall</p>
+      <p>Creative Design & Visuals Head · Town Hall</p>
       <small>View Role Details &rarr;</small>
     </div>
 
@@ -1106,7 +1282,7 @@ dialog::backdrop {
   <h2 class="t">Experience<i>.</i></h2>
   <div class="tl">
     <h3>Agentic AI Developer Intern · MATIC</h3>
-    <div class="m">Modern Agriculture Technology Innovation Center (MATIC) · MADeIT-Incubated Startup at IIITDM Kancheepuram · Chennai · Jun'25 – Sep'25 · Full-Time, Hybrid</div>
+    <div class="m">Modern Agriculture Technology Innovation Center (MATIC) · MADeIT-Incubated Startup at IIITDM Kancheepuram · Chennai · Jun'25 – Oct'25 · Full-Time, Hybrid</div>
     <ul>
       <li>Identified <b>fragmented, manual workflows</b> across startup operations by working directly with founders to uncover root causes, then prioritized the highest-impact automation opportunities.</li>
       <li>Translated ambiguous operational problems into <b>structured product requirements</b>, and designed agentic AI workflows using <b>LLMs, LangGraph, LangChain</b> and full-stack technologies.</li>
@@ -1287,23 +1463,6 @@ dialog::backdrop {
       </div>
     </div>
 
-    <!-- Certificate 2: IIITDM Secure Software Development Boot Camp -->
-    <div class="cert-card rv" data-cert="cert-dialog-2">
-      <div class="cert-preview-wrap">
-        <img src="cert-iiitdm-bootcamp.png" alt="IIITDM Secure Software Boot Camp Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp.png'" />
-        <span class="cert-badge">BOOTCAMP HONORS</span>
-      </div>
-      <div class="cert-content">
-        <div>
-          <h3>Secure Software Development & Testing</h3>
-          <p>IIITD&M Kancheepuram · Department of CSE & HPRCSE Lab · Sponsored by ISEA Phase 3, MeitY</p>
-        </div>
-        <div class="cert-action">
-          <span>View Certificate &rarr;</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Certificate 3: PostgreSQL Simplilearn -->
     <div class="cert-card rv" data-cert="cert-dialog-3">
       <div class="cert-preview-wrap">
@@ -1405,7 +1564,7 @@ dialog::backdrop {
 
 <!-- FOOTER -->
 <footer>
-  &copy; 2026 Inampudi Durga Vamsi Krishnam Raju · Chennai
+  &copy; 2026 Inampudi Durga Vamsi Krishnam Raju
 </footer>
 
 <!-- RESUME VIEWER & DOWNLOAD MODAL -->
@@ -1452,16 +1611,6 @@ dialog::backdrop {
     <img src="cert-iiitdm-bootcamp-3rd-place.png" alt="IIITDM Cybersecurity 3rd Place Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp-3rd-place.png'" />
     <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Software Security Challenge — 3rd Place</h3>
     <p style="font-size:13px;color:var(--mut);margin-top:4px;">IIITD&M Kancheepuram · Secured 3rd Place among 30 participating teams · Boot Camp on Secure Software Development & Testing · Dec 2024</p>
-  </div>
-</dialog>
-
-<!-- CERTIFICATE 2 LIGHTBOX MODAL (NO DOWNLOAD OPTION) -->
-<dialog id="cert-dialog-2" class="dialog-wide">
-  <button class="x" aria-label="Close">✕</button>
-  <div class="lightbox-box">
-    <img src="cert-iiitdm-bootcamp.png" alt="IIITDM Secure Software Boot Camp Certificate" onerror="this.onerror=null;this.src='./cert-iiitdm-bootcamp.png'" />
-    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Secure Software Development & Testing Boot Camp</h3>
-    <p style="font-size:13px;color:var(--mut);margin-top:4px;">IIITD&M Kancheepuram · Department of Computer Science and Engineering & HPRCSE Lab · Sponsored by ISEA Phase 3, MeitY · Dec 2024</p>
   </div>
 </dialog>
 
@@ -1549,8 +1698,8 @@ dialog::backdrop {
     <ul>
       <li><b>Role:</b> Creative Design & Visuals Head</li>
       <li><b>Visual Identity & Branding:</b> Leading the complete design language, brand aesthetic, and digital presence of the team.</li>
-      <li><b>Design & Media Direction:</b> Supervised the creation of event banners, stage visuals, social media promotional collateral, and video assets.</li>
-      <li><b>Creative Mentorship:</b> Guided and coordinated designers to maintain high-impact visual standards across town hall presentations and live forums.</li>
+      <li><b>Design & Media Direction:</b> Supervised the creation of event backdrops, stage visuals, and video assets.</li>
+      <li><b>Creativity:</b> Guided and coordinated designers to maintain high-impact visual standards across town hall presentations and live forums.</li>
     </ul>
     <div class="row">
       <a class="pill f" href="https://justbetweenus.veltech.edu.in/team" target="_blank" rel="noopener">Official Team Page &rarr;</a>
@@ -1562,11 +1711,39 @@ dialog::backdrop {
 (function(){
   // Resume Modal Trigger
   var resumeBtn = document.getElementById('open-resume-btn');
+  var mobileResumeBtn = document.getElementById('mobile-open-resume-btn');
   var resumeDialog = document.getElementById('resume-dialog');
   if (resumeBtn && resumeDialog) {
     resumeBtn.addEventListener('click', function(e){
       e.preventDefault();
       resumeDialog.showModal();
+    });
+  }
+  if (mobileResumeBtn && resumeDialog) {
+    mobileResumeBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      var mobileToggle = document.getElementById('mobile-menu-toggle');
+      var mobileNav = document.getElementById('mobile-nav');
+      if (mobileToggle) mobileToggle.classList.remove('active');
+      if (mobileNav) mobileNav.classList.remove('open');
+      resumeDialog.showModal();
+    });
+  }
+
+  // Mobile Navigation Toggle
+  var mobileToggle = document.getElementById('mobile-menu-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  if (mobileToggle && mobileNav) {
+    mobileToggle.addEventListener('click', function(){
+      mobileToggle.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+
+    mobileNav.querySelectorAll('a:not(#mobile-open-resume-btn)').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileToggle.classList.remove('active');
+        mobileNav.classList.remove('open');
+      });
     });
   }
 
