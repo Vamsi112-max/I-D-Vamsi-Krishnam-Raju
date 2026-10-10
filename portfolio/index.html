@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vamsi Krishnam Raju — Agentic AI & Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --panel: #dcebdd;
+  --card: #e9f3ea;
+  --ink: #102016;
+  --mut: #4b5f52;
+  --ac: #0e8a4f;
+  --fg2: #ffffff;
+  --line: #cfe0d2;
+  --disp: 'Fraunces', Georgia, serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 70px);
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--ac);
+  margin-right: 10px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.brand span {
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--mut);
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--mut);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+
+nav a:hover {
+  color: var(--ac);
+  border-color: var(--ac);
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 24px;
+  background: var(--ac);
+  color: #ffffff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid var(--ac);
+  transition: transform .2s, background .2s, box-shadow .2s;
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  background: #09683a;
+  border-color: #09683a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(14, 138, 79, 0.3);
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(to right, #ffffff 50%, var(--panel) 50%);
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hi {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-card-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pc {
+  width: 100%;
+  max-width: 350px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(16, 32, 22, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transform: rotate(-1.5deg);
+  transition: transform .4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .4s ease;
+  position: relative;
+  border: 1px solid var(--line);
+}
+
+.pc:hover {
+  transform: rotate(0) translateY(-4px);
+  box-shadow: 0 32px 64px -16px rgba(16, 32, 22, 0.22);
+}
+
+.av {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 32px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+  overflow: hidden;
+  background: var(--card);
+  position: relative;
+  cursor: pointer;
+  transition: transform .4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .4s ease;
+}
+
+.av:hover {
+  transform: scale(1.12);
+  box-shadow: 0 16px 36px -4px rgba(14, 138, 79, 0.5);
+}
+
+.av-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 50%;
+  transition: transform .4s ease;
+}
+
+.av:hover .av-img {
+  transform: scale(1.08);
+}
+
+.pc h2 {
+  font: 700 23px/1.25 var(--disp);
+  padding: 0 16px;
+  color: var(--ink);
+}
+
+.pc hr {
+  width: 44px;
+  height: 2px;
+  border: 0;
+  background: var(--ac);
+  margin: 14px auto;
+}
+
+.pc p {
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--mut);
+  padding: 0 14px 26px;
+  font-weight: 600;
+}
+
+.soc {
+  display: flex;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.soc a {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color .2s, background .2s;
+}
+
+.soc a:not(:last-child) {
+  border-right: 1px solid var(--line);
+}
+
+.soc a:hover {
+  color: var(--ac);
+  background: var(--card);
+}
+
+.tx {
+  width: 100%;
+}
+
+.kick {
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ac);
+  font-weight: 700;
+}
+
+h1 {
+  font: 800 clamp(54px, 8.5vw, 108px)/.95 var(--disp);
+  letter-spacing: -.035em;
+  margin: 10px 0 16px;
+  color: var(--ink);
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--ac);
+}
+
+.sub {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+.sub b {
+  font-weight: 700;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.pill {
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid var(--ink);
+  transition: transform .2s, background .2s, color .2s, border-color .2s;
+  cursor: pointer;
+  background: none;
+  color: var(--ink);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill.f {
+  background: var(--ac);
+  border-color: var(--ac);
+  color: var(--fg2);
+}
+
+.pill:hover {
+  transform: translateY(-3px);
+}
+
+.pill.f:hover {
+  background: #09683a;
+  border-color: #09683a;
+}
+
+.tx p.b {
+  color: var(--mut);
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.sec {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 80px 24px 20px;
+}
+
+.sec h2.t {
+  font: 800 clamp(32px, 5vw, 54px)/1 var(--disp);
+  letter-spacing: -.03em;
+  margin-bottom: 34px;
+  color: var(--ink);
+}
+
+.sec h2.t i {
+  font-style: normal;
+  color: var(--ac);
+}
+
+.tl {
+  border-left: 3px solid var(--ac);
+  padding: 4px 0 4px 26px;
+}
+
+.tl h3 {
+  font: 700 22px var(--disp);
+  color: var(--ink);
+}
+
+.tl .m {
+  font-size: 13px;
+  color: var(--mut);
+  margin: 4px 0 16px;
+}
+
+.tl ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.tl li {
+  margin: 0 0 10px 0;
+  color: var(--mut);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tl li b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.pg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.pj {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s, border-top-color .3s, box-shadow .3s;
+  border-top: 4px solid transparent;
+  border: 1px solid var(--line);
+}
+
+.pj:hover {
+  border-top-color: var(--ac);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -16px rgba(14, 138, 79, 0.18);
+}
+
+.pj .n {
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--ac);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pj h3 {
+  font: 700 22px/1.25 var(--disp);
+  margin: 8px 0 6px;
+  color: var(--ink);
+}
+
+.pj .st {
+  font-size: 12.5px;
+  color: var(--mut);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.pj ul {
+  margin-left: 18px;
+  color: var(--mut);
+  font-size: 14px;
+  flex: 1;
+}
+
+.pj li {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.pj li b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.pj .lk {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pj .pill {
+  padding: 8px 18px;
+  font-size: 11px;
+}
+
+.sk {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sk div {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  transition: transform .2s, border-color .2s;
+}
+
+.sk div:hover {
+  transform: translateY(-3px);
+  border-color: var(--ac);
+}
+
+.sk b {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ac);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.sk span {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.6;
+}
+
+.org {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.org .org-card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 8px;
+  display: block;
+  transition: transform .3s, box-shadow .3s;
+  border: 1px solid var(--line);
+  border-bottom: 4px solid var(--ac);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.org .org-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -16px rgba(14, 138, 79, 0.2);
+}
+
+.org h3 {
+  font: 700 22px var(--disp);
+  color: var(--ink);
+}
+
+.org p {
+  font-size: 13.5px;
+  color: var(--mut);
+  margin-top: 4px;
+}
+
+.org small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ac);
+  font-weight: 700;
+}
+
+.ach {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.ach li {
+  background: var(--card);
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--mut);
+  border: 1px solid var(--line);
+  line-height: 1.5;
+}
+
+.ach b {
+  color: var(--ink);
+}
+
+.ach .md {
+  background: var(--ac);
+  color: var(--fg2);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.ed div {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ed div:first-of-type {
+  padding-top: 0;
+}
+
+.ed b {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.ed span {
+  font-size: 13.5px;
+  color: var(--mut);
+}
+
+.cta {
+  background: var(--panel);
+  margin-top: 80px;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.cta h2 {
+  font: 800 clamp(36px, 7vw, 76px)/1 var(--disp);
+  letter-spacing: -.04em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+.cta .btns {
+  justify-content: center;
+  margin: 24px 0 0;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+  color: var(--mut);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+dialog {
+  border: 0;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 520px;
+  width: calc(100% - 32px);
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.35);
+  margin: auto;
+}
+
+dialog.dialog-wide {
+  max-width: 820px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.dh {
+  background: var(--panel);
+  padding: 30px 28px 22px;
+  position: relative;
+}
+
+.dh .av-initials {
+  margin: 0 0 14px;
+  width: 76px;
+  height: 76px;
+  font-size: 24px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 30% 30%, #58a679, #0e8a4f 60%, #085a32);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-family: var(--disp);
+  font-weight: 800;
+  border: 3px solid #ffffff;
+}
+
+.dh h3 {
+  font: 800 24px var(--disp);
+  color: var(--ink);
+}
+
+.dh p {
+  font-size: 13.5px;
+  color: var(--mut);
+}
+
+.db {
+  padding: 24px 28px 28px;
+  font-size: 14px;
+  color: var(--mut);
+}
+
+.db ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.db li {
+  margin: 0 0 12px 0;
+  line-height: 1.55;
+  position: relative;
+  padding-left: 20px;
+}
+
+.db li:before {
+  content: "•";
+  color: var(--ac);
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.db li b {
+  color: var(--ink);
+}
+
+.db .row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.x {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  border: 0;
+  background: var(--bg);
+  color: var(--ink);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  transition: transform .2s, background .2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.x:hover {
+  transform: scale(1.1);
+  background: var(--card);
+}
+
+#photo-dialog .photo-box {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+#photo-dialog img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media(max-width:880px) {
+  nav { display: none; }
+  .hero {
+    background: linear-gradient(to bottom, var(--panel) 0 380px, #ffffff 380px);
+    align-items: flex-start;
+  }
+  .hi {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 36px;
+    padding-top: 40px;
+  }
+  .pc {
+    width: 100%;
+    max-width: 340px;
+    transform: none;
+  }
+  .pg, .sk, .org, .two {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a href="#top" class="brand">
+      Vamsi Krishnam Raju
+      <span>/ Agentic AI Developer</span>
+    </a>
+    <div class="nav-wrap">
+      <nav>
+        <a href="#top">About</a>
+        <a href="#exp">Experience</a>
+        <a href="#work">Projects</a>
+        <a href="#orgs">Communities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="resume-btn" id="open-resume-btn" title="View or Download Resume">
+        <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <span>Resume</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hi">
+    <div class="tx">
+      <div class="kick">Namaste, I'm Vamsi</div>
+      <h1>Hello<em>.</em></h1>
+      <div class="sub">I build <b>agents</b> that do the busywork.</div>
+      <div class="btns">
+        <a class="pill f" href="#work">Projects</a>
+        <a class="pill" href="#exp">Experience</a>
+        <a class="pill" href="#contact">Hire me</a>
+      </div>
+      <p class="b">
+        B.Tech Computer Science student (CGPA 8.46/10) with hands-on experience in Generative AI, Agentic AI, full-stack development, OCR, REST APIs, databases and data analytics. Completed a 5-month AI Developer internship building LLM-powered and OCR-based automation applications, and built and deployed OmniRoot, an agentic AIOps platform. Fast learner seeking to contribute to a software development team.
+      </p>
+    </div>
+
+    <div class="hero-card-col">
+      <aside class="pc">
+        <div class="av" id="profile-avatar" title="Click to view full photo">
+          <img src="/vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" class="av-img" />
+        </div>
+        <h2>Inampudi Durga<br>Vamsi Krishnam Raju</h2>
+        <hr>
+        <p>Agentic AI Developer</p>
+        <div class="soc">
+          <a href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/inampudi-vamsi" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:vamsiinampudi01@gmail.com">Email</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec rv" id="exp">
+  <h2 class="t">Experience<i>.</i></h2>
+  <div class="tl">
+    <h3>Agentic AI Developer Intern · MATIC</h3>
+    <div class="m">Modern Agriculture Technology Innovation Center (MATIC) · MADeIT-Incubated Startup at IIITDM Kancheepuram · Chennai · June 06 2025 – Sep 30 2025 · Full-Time, Hybrid</div>
+    <ul>
+      <li>Identified <b>fragmented, manual workflows</b> across startup operations by working directly with founders to uncover root causes, then prioritized the highest-impact automation opportunities.</li>
+      <li>Translated ambiguous operational problems into <b>structured product requirements</b>, and designed agentic AI workflows using <b>LLMs, LangGraph, LangChain</b> and full-stack technologies.</li>
+      <li>Built and scaled <b>Assist Pro</b>, an AI-powered automation platform, reducing manual effort by <b>over 75%</b> across startup operations.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <h2 class="t rv">Projects<i>.</i></h2>
+  <div class="pg">
+    <article class="pj rv">
+      <span class="n">PROJECT · 01</span>
+      <h3>GenAI Task Management & Expense Analytics</h3>
+      <div class="st">Python · LLM · Prompt Engineering · REST API · SQL · OCR · HTML</div>
+      <ul>
+        <li>Built AI-powered applications for employee task assignment, workflow automation, project tracking, approvals, role-based access control (RBAC) and real-time monitoring.</li>
+        <li>Developed a conversational AI assistant to process natural-language requests, manage employee and project data, automate workflows and generate reports.</li>
+        <li>Built an OCR-based invoice-processing system to extract invoice data, categorize transactions and generate dashboards for income, expenses, profit/loss, vendor analytics and spending trends.</li>
+      </ul>
+      <div class="lk">
+        <a class="pill f" href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <article class="pj rv">
+      <span class="n">PROJECT · 02</span>
+      <h3>IoT Smart Agriculture System</h3>
+      <div class="st">Python · Raspberry Pi · REST API · Cloud</div>
+      <ul>
+        <li>Developed an IoT platform monitoring soil moisture, temperature, humidity, rainfall, water level, NPK nutrients and light intensity.</li>
+        <li>Integrated Raspberry Pi with sensors, cloud dashboards, automated irrigation control, real-time alerts and remote monitoring for data-driven crop management and efficient water usage.</li>
+      </ul>
+      <div class="lk">
+        <a class="pill f" href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <article class="pj rv">
+      <span class="n">FEATURED · 03</span>
+      <h3>OmniRoot Agentic AI</h3>
+      <div class="st">Autonomous Infrastructure Intelligence Platform · OpenAI API · n8n · SQL · Docker</div>
+      <ul>
+        <li>Developed an AI-assisted AIOps platform for infrastructure monitoring, incident detection, root-cause analysis, API debugging, cloud cost analysis, security monitoring and remediation support.</li>
+        <li>Designed an architecture with <b>5 specialized AI agents</b>, <b>8 intelligence layers</b> and an <b>18-node workflow</b> for incident analysis, alert prioritization, governance reporting and remediation.</li>
+      </ul>
+      <div class="lk">
+        <a class="pill f" href="https://omniroot-agentic-ai.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+        <a class="pill" href="https://github.com/Vamsi112-max/OmniRoot-AI" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+
+    <article class="pj rv">
+      <span class="n">FEATURED · 04</span>
+      <h3>AtomSphere Nexus</h3>
+      <div class="st">Goal Intelligence & Performance Tracking SaaS Platform</div>
+      <ul>
+        <li>SaaS platform for setting goals and tracking performance with measurable progress for teams and individuals.</li>
+      </ul>
+      <div class="lk">
+        <a class="pill f" href="https://atom-sphere-nexus.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+        <a class="pill" href="https://github.com/Vamsi112-max/AtomSphere-Nexus" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="stack">
+  <h2 class="t rv">Toolbox<i>.</i></h2>
+  <div class="sk">
+    <div class="rv">
+      <b>Programming</b>
+      <span>Python, Java, C, SQL</span>
+    </div>
+    <div class="rv">
+      <b>Web Development</b>
+      <span>HTML, CSS, REST APIs, FastAPI</span>
+    </div>
+    <div class="rv">
+      <b>Databases</b>
+      <span>MySQL, PostgreSQL</span>
+    </div>
+    <div class="rv" style="grid-column: span 2">
+      <b>AI & Automation</b>
+      <span>LLMs, Prompt Engineering, OpenAI API, OCR, n8n, LangChain, LangGraph</span>
+    </div>
+    <div class="rv">
+      <b>Tools & Platforms</b>
+      <span>Git, GitHub, Docker, AWS (Basics)</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="orgs">
+  <h2 class="t rv">Communities & Leadership<i>.</i></h2>
+  <div class="org">
+    <div class="org-card rv" data-d="d1">
+      <h3>Yantriksha X Hub</h3>
+      <p>Chief of Industry, Alumni & Partnership and Registration · Vel Tech University (1000+ students)</p>
+      <small>View Role Details &rarr;</small>
+    </div>
+
+    <div class="org-card rv" data-d="d2">
+      <h3>Just Between Us Town Hall</h3>
+      <p>Creative Design & Visuals Head · Team Hall</p>
+      <small>View Role Details &rarr;</small>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="two">
+    <div class="rv">
+      <h2 class="t">Wins<i>.</i></h2>
+      <ul class="ach">
+        <li>
+          <span class="md">2ND</span><b>Smart India Hackathon</b> — University Level
+        </li>
+        <li>
+          <span class="md">3RD</span><b>IIITDM Innovation Bootcamp</b> — Cybersecurity Challenge
+        </li>
+        <li>
+          Participated in Amazon HackOn 6.0, AtomQuest 2026, Google Gemini Write-off, Agentic AI Hackathon, IndustrIAI Hackathon, Aurigo, Infosys and Smart India Hackathon.
+        </li>
+      </ul>
+    </div>
+
+    <div class="rv ed">
+      <h2 class="t">Education<i>.</i></h2>
+      <div>
+        <b>B.Tech – Computer Science and Engineering · CGPA: 8.46/10</b>
+        <span>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai · Aug 2023 – Jun 2027</span>
+      </div>
+      <div>
+        <b>Intermediate (MPC) · 77.4%</b>
+        <span>FIITJEE Junior College, Visakhapatnam · Jun 2021 – Mar 2023</span>
+      </div>
+      <div>
+        <b>High School · 100%</b>
+        <span>Tirumala E.M. High School · Aug 2020 – Apr 2021</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="kick">Let's talk</div>
+  <h2>Got a workflow<br>worth automating?</h2>
+  <div class="btns">
+    <a class="pill f" href="mailto:vamsiinampudi01@gmail.com">Email me</a>
+    <a class="pill" href="tel:+919963372857">+91 99633 72857</a>
+    <a class="pill" href="https://github.com/Vamsi112-max" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Inampudi Durga Vamsi Krishnam Raju · Chennai
+</footer>
+
+<dialog id="resume-dialog" class="dialog-wide">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="dh">
+    <h3>Curriculum Vitae</h3>
+    <p>Inampudi Durga Vamsi Krishnam Raju — Agentic AI & Full-Stack Developer</p>
+  </div>
+  <div class="db">
+    <div style="width:100%;height:58vh;background:#f5f5f5;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px;">
+      <iframe src="/vamsi-resume.pdf#toolbar=1" width="100%" height="100%" style="border:none;">
+        <p>Your browser doesn't support PDF preview. You can <a href="/vamsi-resume.pdf" target="_blank">view the PDF directly</a>.</p>
+      </iframe>
+    </div>
+    <div class="row" style="margin-top:0;">
+      <a class="pill f" href="/vamsi-resume.pdf" download="Vamsi_Krishnam_Raju_Resume.pdf">
+        <svg style="width:14px;height:14px;margin-right:4px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download Resume (PDF)
+      </a>
+      <a class="pill" href="/vamsi-resume.pdf" target="_blank" rel="noopener">
+        Open in New Tab
+      </a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="photo-dialog">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="photo-box">
+    <img src="/vamsi-photo.jpg" alt="Inampudi Durga Vamsi Krishnam Raju" />
+    <h3 style="font-family:var(--disp);margin-top:14px;font-size:20px;color:var(--ink);">Inampudi Durga Vamsi Krishnam Raju</h3>
+    <p style="font-size:12px;color:var(--mut);letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-top:4px;">Agentic AI Developer</p>
+  </div>
+</dialog>
+
+<dialog id="d1">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="dh">
+    <div class="av-initials">YX</div>
+    <h3>Yantriksha X Hub</h3>
+    <p>Vel Tech University · Chennai</p>
+  </div>
+  <div class="db">
+    <ul>
+      <li><b>Role:</b> Chief of Industry, Alumni & Partnership and Registration</li>
+      <li><b>Community Scale:</b> Leading a student developer and tech community of <b>1000+ members</b>.</li>
+      <li><b>Industry Alignment:</b> Established strategic partnerships with industry leaders, tech startups, and technical incubators for student opportunities.</li>
+      <li><b>Alumni & Expert Engagement:</b> Organized expert guest lectures, mentorship pipelines, and industry connect sessions.</li>
+      <li><b>Event & Hackathon Operations:</b> Spearheaded large-scale hackathon registrations, participant coordination, and event logistics across the university.</li>
+    </ul>
+    <div class="row">
+      <a class="pill f" href="https://yantrikshaxhub.veltech.edu.in/team" target="_blank" rel="noopener">Official Team Page &rarr;</a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="d2">
+  <button class="x" aria-label="Close">✕</button>
+  <div class="dh">
+    <div class="av-initials">JB</div>
+    <h3>Just Between Us Town Hall</h3>
+    <p>Creative Design & Visuals Hub</p>
+  </div>
+  <div class="db">
+    <ul>
+      <li><b>Role:</b> Creative Design & Visuals Head</li>
+      <li><b>Visual Identity & Branding:</b> Leading the complete design language, brand aesthetic, and digital presence of the team.</li>
+      <li><b>Design & Media Direction:</b> Supervised the creation of event banners, stage visuals, social media promotional collateral, and video assets.</li>
+      <li><b>Creative Mentorship:</b> Guided and coordinated designers to maintain high-impact visual standards across town hall presentations and live forums.</li>
+    </ul>
+    <div class="row">
+      <a class="pill f" href="https://justbetweenus.veltech.edu.in/team" target="_blank" rel="noopener">Official Team Page &rarr;</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var resumeBtn = document.getElementById('open-resume-btn');
+  var resumeDialog = document.getElementById('resume-dialog');
+  if (resumeBtn && resumeDialog) {
+    resumeBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      resumeDialog.showModal();
+    });
+  }
+
+  var avatar = document.getElementById('profile-avatar');
+  var photoDialog = document.getElementById('photo-dialog');
+  if (avatar && photoDialog) {
+    avatar.addEventListener('click', function(){
+      photoDialog.showModal();
+    });
+  }
+
+  document.querySelectorAll('[data-d]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      var dialogId = this.getAttribute('data-d');
+      var dialog = document.getElementById(dialogId);
+      if(dialog) dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll('dialog').forEach(function(d){
+    var closeBtn = d.querySelector('.x');
+    if(closeBtn) closeBtn.onclick = function(){ d.close(); };
+    d.onclick = function(e){ if(e.target === d) d.close(); };
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.rv').forEach(function(node){
+    io.observe(node);
+  });
+})();
+</script>
+
+</body>
+</html>
