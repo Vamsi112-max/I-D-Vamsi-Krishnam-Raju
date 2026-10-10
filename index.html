@@ -68,11 +68,12 @@ header {
 
 .brand {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 .brand:before {
@@ -84,6 +85,7 @@ header {
   margin-right: 10px;
   border-radius: 2px;
   transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .brand span {
@@ -98,15 +100,15 @@ header {
 .nav-wrap {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 12px;
-  letter-spacing: .08em;
+  gap: 14px;
+  font-size: 11.5px;
+  letter-spacing: .06em;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -117,6 +119,7 @@ nav a {
   padding: 4px 0;
   border-bottom: 2px solid transparent;
   transition: color .2s, border-color .2s;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -140,6 +143,7 @@ nav a:hover {
   border: 1.5px solid var(--ac);
   transition: transform .2s, background .2s, box-shadow .2s;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .resume-btn:hover {
@@ -149,7 +153,7 @@ nav a:hover {
   box-shadow: 0 4px 14px rgba(14, 138, 79, 0.3);
 }
 
-/* Hero Section */
+/* 1. HERO / ABOUT SECTION */
 .hero {
   position: relative;
   background: linear-gradient(to right, #ffffff 50%, var(--panel) 50%);
@@ -357,7 +361,7 @@ nav a:hover {
   max-width: 520px;
 }
 
-/* Sections */
+/* Sections Structure */
 .sec {
   max-width: 1140px;
   margin: 0 auto;
@@ -380,7 +384,55 @@ nav a:hover {
   font-style: normal;
 }
 
-/* Experience */
+/* 2. LEADERSHIP SECTION */
+.org {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.org .org-card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 8px;
+  display: block;
+  transition: transform .3s, box-shadow .3s;
+  border: 1px solid var(--line);
+  border-bottom: 4px solid var(--ac);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.org .org-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -16px rgba(14, 138, 79, 0.2);
+}
+
+.org h3 {
+  font: 700 22px var(--disp);
+  color: var(--ink);
+}
+
+.org p {
+  font-size: 13.5px;
+  color: var(--mut);
+  margin-top: 4px;
+}
+
+.org small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ac);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+/* 3. EXPERIENCE SECTION */
 .tl {
   border-left: 2px solid var(--ac);
   padding-left: 28px;
@@ -427,7 +479,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Projects Grid */
+/* 4. PROJECTS SECTION */
 .pg {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -500,7 +552,61 @@ nav a:hover {
   font-size: 11px;
 }
 
-/* Toolbox */
+/* 5. EDUCATION SECTION */
+.ed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ed-card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ac);
+  transition: transform .2s, border-color .2s;
+}
+
+.ed-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ac);
+}
+
+.ed-card .yr {
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ac);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ed-card h3 {
+  font: 700 18px var(--disp);
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.ed-card .inst {
+  font-size: 13px;
+  color: var(--mut);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ed-card .grade {
+  display: inline-block;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ac);
+  border: 1px solid var(--line);
+}
+
+/* 6. TOOLBOX SECTION */
 .sk {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -536,7 +642,70 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* Certifications Section */
+/* 7. WINS SECTION */
+.wins-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.win-item {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.win-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -8px rgba(14, 138, 79, 0.15);
+}
+
+.win-badge {
+  background: var(--ac);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.win-content h4 {
+  font: 700 18px var(--disp);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.win-content p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.5;
+}
+
+.wins-participated {
+  grid-column: span 2;
+  background: var(--card);
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.65;
+}
+
+.wins-participated b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 8. CERTIFICATIONS SECTION */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -628,109 +797,7 @@ nav a:hover {
   gap: 4px;
 }
 
-/* Communities */
-.org {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-
-.org .org-card {
-  background: var(--card);
-  padding: 28px;
-  border-radius: 8px;
-  display: block;
-  transition: transform .3s, box-shadow .3s;
-  border: 1px solid var(--line);
-  border-bottom: 4px solid var(--ac);
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-.org .org-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px -16px rgba(14, 138, 79, 0.2);
-}
-
-.org h3 {
-  font: 700 22px var(--disp);
-  color: var(--ink);
-}
-
-.org p {
-  font-size: 13.5px;
-  color: var(--mut);
-  margin-top: 4px;
-}
-
-.org small {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--ac);
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 14px;
-}
-
-/* Two Columns (Wins & Education) */
-.two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-}
-
-.ach {
-  list-style: none;
-  padding: 0;
-}
-
-.ach li {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  color: var(--mut);
-  line-height: 1.6;
-}
-
-.ach li b {
-  color: var(--ink);
-}
-
-.ach .md {
-  display: inline-block;
-  background: var(--ac);
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  padding: 2px 8px;
-  border-radius: 12px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.ed div {
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-}
-
-.ed b {
-  display: block;
-  font-size: 15px;
-  color: var(--ink);
-}
-
-.ed span {
-  font-size: 13px;
-  color: var(--mut);
-}
-
-/* Call to Action */
+/* 9. CONTACT / CTA SECTION */
 .cta {
   background: var(--panel);
   border-top: 1px solid var(--line);
@@ -915,7 +982,7 @@ dialog::backdrop {
   transform: none;
 }
 
-@media(max-width:880px) {
+@media(max-width:920px) {
   nav { display: none; }
   .hero {
     background: linear-gradient(to bottom, var(--panel) 0 380px, #ffffff 380px);
@@ -933,29 +1000,34 @@ dialog::backdrop {
     max-width: 340px;
     transform: none;
   }
-  .pg, .sk, .cert-grid, .org, .two {
+  .pg, .sk, .ed-grid, .wins-wrap, .cert-grid, .org {
     grid-template-columns: 1fr;
+  }
+  .wins-participated {
+    grid-column: span 1;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER WITH RESUME BUTTON -->
+<!-- HEADER WITH TOP NAVIGATION AND RESUME BUTTON -->
 <header>
   <div class="bar">
-    <a href="#top" class="brand">
+    <a href="#about" class="brand">
       Vamsi Krishnam Raju
       <span>/ Agentic AI Developer</span>
     </a>
     <div class="nav-wrap">
       <nav>
-        <a href="#top">About</a>
-        <a href="#exp">Experience</a>
-        <a href="#work">Projects</a>
-        <a href="#stack">Toolbox</a>
+        <a href="#about">About</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#wins">Wins</a>
         <a href="#certs">Certifications</a>
-        <a href="#orgs">Leadership</a>
         <a href="#contact">Contact</a>
       </nav>
       <!-- Top Bar Resume Button -->
@@ -969,8 +1041,8 @@ dialog::backdrop {
   </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero" id="top">
+<!-- 1. ABOUT / HERO SECTION -->
+<section class="hero" id="about">
   <div class="hi">
     <!-- Hero Bio Text (Left Column) -->
     <div class="tx">
@@ -978,12 +1050,12 @@ dialog::backdrop {
       <h1>Hello<em>.</em></h1>
       <div class="sub">I build <b>agents</b> that do the busywork.</div>
       <div class="btns">
-        <a class="pill f" href="#work">Projects</a>
-        <a class="pill" href="#exp">Experience</a>
+        <a class="pill f" href="#projects">Projects</a>
+        <a class="pill" href="#experience">Experience</a>
         <a class="pill" href="#contact">Hire me</a>
       </div>
       <p class="b">
-        B.Tech Computer Science student (CGPA 8.46/10) who loves to create and innovate new things instead of following the basic, traditional way. Built a GenAI-powered task management and expense analytics platform with OCR dashboards and completed a 5-month Agentic AI Developer internship, reducing manual effort by over 75%. Active leader at Yantriksha X Hub as Chief of Industry, Alumni & Partnership and Registration. Fast learner skilled in Python, REST APIs and full-stack development, with the goal of becoming an entrepreneur.
+        B.Tech Computer Science student (CGPA 8.46/10) who loves to create and innovate new things instead of following the basic, traditional way. Built a GenAI-powered task management and expense analytics platform with OCR dashboards and completed a 5-month Agentic AI Developer internship, reducing manual effort by over 75%. Active leader at Yantriksha X Hub as Chief of Industry, Alumni & Partnership and Registration. A fast learner who keeps upgrading instead of settling in one place, skilled in Python, REST APIs and full-stack development, with the goal of becoming an entrepreneur.
       </p>
     </div>
 
@@ -1007,8 +1079,30 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION -->
-<section class="sec rv" id="exp">
+<!-- 2. LEADERSHIP SECTION -->
+<section class="sec" id="leadership">
+  <h2 class="t rv">Leadership & Communities<i>.</i></h2>
+  <div class="org">
+    
+    <!-- Yantriksha X Hub -->
+    <div class="org-card rv" data-d="d1">
+      <h3>Yantriksha X Hub</h3>
+      <p>Chief of Industry, Alumni & Partnership and Registration · Vel Tech University (800+ students)</p>
+      <small>View Role Details &rarr;</small>
+    </div>
+
+    <!-- Just Between Us -->
+    <div class="org-card rv" data-d="d2">
+      <h3>Just Between Us Town Hall</h3>
+      <p>Creative Design & Visuals Head · Team Hall</p>
+      <small>View Role Details &rarr;</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3. EXPERIENCE SECTION -->
+<section class="sec rv" id="experience">
   <h2 class="t">Experience<i>.</i></h2>
   <div class="tl">
     <h3>Agentic AI Developer Intern · MATIC</h3>
@@ -1021,8 +1115,8 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
-<section class="sec" id="work">
+<!-- 4. PROJECTS SECTION -->
+<section class="sec" id="projects">
   <h2 class="t rv">Projects<i>.</i></h2>
   <div class="pg">
     
@@ -1086,8 +1180,37 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- TOOLBOX SECTION -->
-<section class="sec" id="stack">
+<!-- 5. EDUCATION SECTION -->
+<section class="sec" id="education">
+  <h2 class="t rv">Education<i>.</i></h2>
+  <div class="ed-grid">
+    
+    <div class="ed-card rv">
+      <div class="yr">2023 – 2027</div>
+      <h3>B.Tech – Computer Science and Engineering</h3>
+      <div class="inst">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology · Chennai</div>
+      <span class="grade">CGPA: 8.46 / 10</span>
+    </div>
+
+    <div class="ed-card rv">
+      <div class="yr">2021 – 2023</div>
+      <h3>Intermediate (MPC)</h3>
+      <div class="inst">FIITJEE Junior College · Visakhapatnam</div>
+      <span class="grade">Score: 77.4%</span>
+    </div>
+
+    <div class="ed-card rv">
+      <div class="yr">2020 – 2021</div>
+      <h3>High School</h3>
+      <div class="inst">Tirumala E.M. High School · Rajamahendravaram</div>
+      <span class="grade">Score: 100%</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- 6. TOOLBOX SECTION -->
+<section class="sec" id="toolbox">
   <h2 class="t rv">Toolbox<i>.</i></h2>
   <div class="sk">
     <div class="rv">
@@ -1113,7 +1236,36 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- CERTIFICATIONS SECTION (NO DOWNLOAD BUTTONS) -->
+<!-- 7. WINS SECTION -->
+<section class="sec" id="wins">
+  <h2 class="t rv">Wins & Hackathons<i>.</i></h2>
+  <div class="wins-wrap">
+    
+    <div class="win-item rv">
+      <div class="win-badge">2ND PLACE</div>
+      <div class="win-content">
+        <h4>Smart India Hackathon</h4>
+        <p>University Level Innovation Challenge winner with innovative problem-solving.</p>
+      </div>
+    </div>
+
+    <div class="win-item rv">
+      <div class="win-badge">3RD PLACE</div>
+      <div class="win-content">
+        <h4>IIITDM Innovation Bootcamp</h4>
+        <p>Cybersecurity Challenge winner among 30 participating teams at IIITD&M Kancheepuram.</p>
+      </div>
+    </div>
+
+    <div class="wins-participated rv">
+      <b>Hackathons & Competitions Participated:</b><br>
+      Amazon HackOn 6.0, AtomQuest 2026, Google Gemini Write-off, Agentic AI Hackathon, IndustrIAI Hackathon, Aurigo, Infosys, and Smart India Hackathon.
+    </div>
+
+  </div>
+</section>
+
+<!-- 8. CERTIFICATIONS SECTION (NO DOWNLOAD BUTTONS) -->
 <section class="sec" id="certs">
   <h2 class="t rv">Certifications<i>.</i></h2>
   <div class="cert-grid">
@@ -1240,69 +1392,7 @@ dialog::backdrop {
   </div>
 </section>
 
-<!-- COMMUNITIES SECTION -->
-<section class="sec" id="orgs">
-  <h2 class="t rv">Communities & Leadership<i>.</i></h2>
-  <div class="org">
-    
-    <!-- Yantriksha X Hub -->
-    <div class="org-card rv" data-d="d1">
-      <h3>Yantriksha X Hub</h3>
-      <p>Chief of Industry, Alumni & Partnership and Registration · Vel Tech University (800+ students)</p>
-      <small>View Role Details &rarr;</small>
-    </div>
-
-    <!-- Just Between Us -->
-    <div class="org-card rv" data-d="d2">
-      <h3>Just Between Us Town Hall</h3>
-      <p>Creative Design & Visuals Head · Team Hall</p>
-      <small>View Role Details &rarr;</small>
-    </div>
-
-  </div>
-</section>
-
-<!-- WINS & EDUCATION (Two Columns) -->
-<section class="sec">
-  <div class="two">
-    
-    <!-- Wins -->
-    <div class="rv">
-      <h2 class="t">Wins<i>.</i></h2>
-      <ul class="ach">
-        <li>
-          <span class="md">2ND</span><b>Smart India Hackathon</b> — University Level
-        </li>
-        <li>
-          <span class="md">3RD</span><b>IIITDM Innovation Bootcamp</b> — Cybersecurity Challenge
-        </li>
-        <li>
-          Participated in Amazon HackOn 6.0, AtomQuest 2026, Google Gemini Write-off, Agentic AI Hackathon, IndustrIAI Hackathon, Aurigo, Infosys and Smart India Hackathon.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Education -->
-    <div class="rv ed">
-      <h2 class="t">Education<i>.</i></h2>
-      <div>
-        <b>B.Tech – Computer Science and Engineering · CGPA: 8.46/10</b>
-        <span>Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai · 2023 – 2027</span>
-      </div>
-      <div>
-        <b>Intermediate (MPC) · 77.4%</b>
-        <span>FIITJEE Junior College, Visakhapatnam · 2021 – 2023</span>
-      </div>
-      <div>
-        <b>High School · 100%</b>
-        <span>Tirumala E.M. High School · 2020 – 2021</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA / CONTACT SECTION -->
+<!-- 9. CONTACT / CTA SECTION -->
 <section class="cta" id="contact">
   <div class="kick">Let's talk</div>
   <h2>Got a workflow<br>worth automating?</h2>
