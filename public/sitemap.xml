@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/</loc>
     <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/vamsi-photo.jpg</image:loc>
+      <image:title>Inampudi Durga Vamsi Krishnam Raju - Profile Photo</image:title>
+      <image:caption>Inampudi Durga Vamsi Krishnam Raju, Agentic AI Developer &amp; Full-Stack Engineer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/cert-iiitdm-bootcamp-3rd-place.png</image:loc>
+      <image:title>Software Security Challenge 3rd Place - IIITDM Kancheepuram</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/cert-postgresql.png</image:loc>
+      <image:title>PostgreSQL SQL Developer Verified Certificate - Simplilearn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/cert-aurigo-hackathon.png</image:loc>
+      <image:title>Pragyan 25 Aurigo Hackathon Honors - NIT Trichy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/cert-google-gemini-writeoff.png</image:loc>
+      <image:title>Google Gemini Write-off Ambassador Certificate</image:title>
+    </image:image>
   </url>
 </urlset>
