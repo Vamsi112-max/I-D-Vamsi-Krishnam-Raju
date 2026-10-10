@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vamsi112-max.github.io/I-D-Vamsi-Krishnam-Raju/sitemap.xml
